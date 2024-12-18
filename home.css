@@ -664,7 +664,7 @@ button.next {
     }
   }
   /* Container Styling */
-/* .s-testimonials {
+.s-testimonials {
   background-color: #f9f9f9;
   padding: 40px 20px;
   border-radius: 8px;
@@ -678,7 +678,7 @@ button.next {
   margin-bottom: 30px;
 }
 
- Swiper Layout
+ /* Swiper Layout
 .swiper-container {
   width: 100%;
   padding: 20px 0;
@@ -752,9 +752,9 @@ Responsive Design
     width: 60px;
     height: 60px;
   }
-}
+} */
 
- */
+ 
 
 /* General Footer Styling */
 #footer {
