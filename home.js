@@ -100,33 +100,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = document.querySelectorAll('.testimonial-slide');
     const dots = document.querySelectorAll('.slider-dot');
 
-    // Function to Change Slides
+    // Function to Change Slides (Previous or Next)
     function changeTestimonialSlide(direction) {
-        slides[currentSlideIndex].classList.remove('active');
-        dots[currentSlideIndex].classList.remove('active');
+        // Remove 'active' class from current slide and dot
+        if (slides[currentSlideIndex]) {
+            slides[currentSlideIndex].classList.remove('active');
+        }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.remove('active');
+        }
+
+        // Update the current index (circular behavior)
         currentSlideIndex = (currentSlideIndex + direction + slides.length) % slides.length;
+
+        // Update Slider with new active slide
         updateTestimonialSlider();
     }
 
-    // Jump to a Specific Slide
+    // Jump to a Specific Slide (via dot click)
     function jumpToTestimonialSlide(index) {
-        slides[currentSlideIndex].classList.remove('active');
-        dots[currentSlideIndex].classList.remove('active');
+        // Remove 'active' class from current slide and dot
+        if (slides[currentSlideIndex]) {
+            slides[currentSlideIndex].classList.remove('active');
+        }
+        if (dots[currentSlideIndex]) {
+            dots[currentSlideIndex].classList.remove('active');
+        }
+
+        // Update to the clicked dot's index
         currentSlideIndex = index;
+
+        // Update Slider with new active slide
         updateTestimonialSlider();
     }
 
-    // Update Slider Display
+    // Update the Slider Display (Add 'active' class to the current slide and dot)
     function updateTestimonialSlider() {
-        slides[currentSlideIndex].classList.add('active');
-        dots[currentSlideIndex].classList.add('active');
+        if (slides[currentSlideIndex] && dots[currentSlideIndex]) {
+            slides[currentSlideIndex].classList.add('active');
+            dots[currentSlideIndex].classList.add('active');
+        }
     }
 
-    // Attach Event Listeners
-    document.querySelector('.button-prev').addEventListener('click', () => changeTestimonialSlide(-1));
-    document.querySelector('.button-next').addEventListener('click', () => changeTestimonialSlide(1));
-    dots.forEach((dot, index) => dot.addEventListener('click', () => jumpToTestimonialSlide(index)));
+    // Attach Event Listeners for Buttons
+    document.querySelector('.button-prev').addEventListener('click', () => changeTestimonialSlide(-1)); // Previous slide
+    document.querySelector('.button-next').addEventListener('click', () => changeTestimonialSlide(1)); // Next slide
 
-    // Initialize Slider
+    // Attach Event Listeners for Dots (to jump to specific slides)
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', () => jumpToTestimonialSlide(index));
+    });
+
+    // Initialize the Slider
     updateTestimonialSlider();
+
 });
