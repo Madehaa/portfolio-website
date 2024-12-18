@@ -1,0 +1,1068 @@
+/* General Reset */
+/* body {
+    margin: 0;
+    padding: 0;
+    font-family: "Playfair Display", serif;
+    background-color: #f9f9f9;
+    color: #333;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  } */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+  font-family: "Playfair Display", serif; /* Sets the font */
+  background-color: #f9f9f9; /* Light background color */
+  color: #333; /* Text color */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+  line-height: 1.6; /* Ensures readable line height */
+
+ 
+  width: fit-content;
+}
+html, body {
+
+  margin: 0;
+  /* width: 100%; */
+
+}
+  main{
+    width: 100%;
+  }
+/* Navbar */
+.s-header {
+  background-color: black;
+  font-family: "Playfair Display", serif;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  height: 10%;
+  /* overflow: hidden; */
+}
+
+
+/* Logo Styles */
+.s-header__logo {
+  flex: 1;
+}
+
+.s-header__logo a {
+  text-decoration: none;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.s-header img {
+  height: 50px;
+}
+
+/* Navigation Styles */
+.s-header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+ 
+}
+.s-header__nav a {
+  font-family: "Playfair Display", serif; /* Ensure font is applied to the links */
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+.s-header__nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 30px;
+  position: static;
+}
+
+.s-header__nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.s-header__nav ul li a:hover,
+.s-header__nav ul li.current a {
+  color: lightgray;
+}
+
+/* Hamburger Menu */
+.burger {
+  display: none;  /* Hidden by default on large screens */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 4px;
+  position: absolute;
+  right: 10%; /* Right aligned */
+  z-index: 1001;
+  top: 16px;
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+/* By default, hide the menu */
+.s-header__menu-links {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* When 'active' class is added, show the menu */
+.s-header__menu-links.active {
+  display: block;  /* Show the menu */
+}
+
+
+/* For Mobile View (Below 900px) */
+@media screen and (max-width: 900px) {
+  .s-header__nav ul {
+    display: none; /* Hide menu items */
+  }
+  .burger {
+    display: flex;  /* Show hamburger */
+  }
+
+  .s-header__nav ul.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background-color: black;
+    width: 100%;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  .s-header__menu-links.active li {
+    margin-bottom: 10px;
+  }
+}
+
+/* For Larger Screens (Above 900px) */
+@media screen and (min-width: 901px) {
+  /* Display logo and menu inline, logo left, menu right */
+  .s-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .s-header__logo {
+    order: 1;
+    flex: 1;
+  }
+
+  .s-header__nav {
+    order: 2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .s-header__nav ul {
+    display: flex;
+    position: static;
+    top: auto;
+    right: auto;
+    gap: 30px;
+    left: -43px;
+  }
+
+  /* Hide hamburger on larger screens */
+  .burger {
+    display: none;
+  }
+
+  /* Menu should always be visible on larger screens */
+  .s-header__nav ul {
+    display: flex;
+    gap: 30px;
+    position: relative;
+  }
+}
+
+
+  /* About Section */
+  .about-section {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    /* padding: 80px 10%; */
+    background-color: #f2f2f2;
+    min-height: 100vh;
+  }
+  
+  .about-container {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    /* flex-wrap: wrap; */
+  }
+  
+  .about-text {
+    flex: 1 1 50%;
+    padding: 20px;
+  }
+  
+  .intro-text {
+    color: brown;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .about-text h1 {
+    font-size: 48px;
+    line-height: 1.4;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-image {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    /* border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  /* Buttons */
+  .btn-group {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: brown;
+  }
+  
+  .btn-secondary {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .btn-secondary:hover {
+    background-color: black;
+    color: white;
+  }
+  .btn:focus, .btn-secondary:focus {
+    outline: 3px solid brown; /* Example for focus state */
+  }
+  
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    font-size: 14px;
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  /*For screens above 1081px */
+   @media screen and (min-width: 1081px) {
+    
+   
+     .about-container {
+      flex-direction: row;
+      justify-content: center;
+
+    }
+   
+     .about-text {
+      text-align: left;
+      /* padding: 20px; */
+    } 
+   
+     .about-image {
+      text-align: center;
+}  }
+
+  
+  /* For screens below 1081px */
+    @media screen and (max-width: 1080px) {
+     /*.s-header__nav ul {
+      display: none;
+    }
+  
+    .burger {
+      display: flex;
+    }
+   
+    /* When active, display the menu */
+    .s-header__menu-links.active {
+      display: block;
+      background-color: black;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      gap: 10px;
+    }
+  
+    .about-section {
+      background: url('../afyan.jpg') no-repeat center /cover;
+      padding: 288px;
+      color: white;
+      text-align: center;
+    }
+  
+    .about-text {
+      /* background: rgba(0, 0, 0, 0.6);*/
+       /* padding: 20px;
+      border-radius: 10px; 
+      text-align: center;
+      position: absolute;
+      left: 25%; */
+     
+        position: static;
+        margin: 0 auto;
+        text-align: center;
+    
+    }
+  
+    .about-image {
+      display: none;
+      
+    }
+    }
+   
+  /* For very small screens (Mobile) */
+  @media screen and (max-width: 480px) {
+    .about-text h1 {
+      font-size: 28px;
+    }
+    .about-text{
+        position: absolute;
+        left: 26%;
+    }
+  
+    .btn,
+    .btn-secondary {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+  .vid {
+    width: 80%;
+    max-width: 100%;
+    display: block;
+    margin: 20px auto;
+    cursor: pointer; /* Default cursor */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: #2f302f;
+  border-color: #474747;
+    
+  }
+  .vid video {
+    width: 100%;
+    height: auto;
+    border-radius: 30px; /* Same border-radius on the video element */
+}
+
+  /* Hover effect: Slight zoom on the video container */
+  .vid:hover {
+    transform: scale(1.05); /* Zoom in when hovered */
+  }
+ 
+
+  
+  .slider-container {
+    position: relative;
+    width: 90%;
+    height: 500px; /* Adjust slider height */
+    perspective: 1200px;
+    overflow: hidden;
+}
+
+.slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    position: absolute;
+    width: 300px;
+    height: 100%;
+    opacity: 0.5;
+    transform: scale(0.8) rotateY(-30deg);
+    transition: transform 0.5s ease-in-out, opacity 0.5s;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1) rotateY(0);
+    z-index: 10;
+}
+
+.slide:nth-child(1) {
+    transform: translateX(-120%) rotateY(-20deg);
+}
+
+.slide:nth-child(3) {
+    transform: translateX(120%) rotateY(20deg);
+}
+
+video {
+    width: 100%; /* Ensure the video takes the full width of the slide */
+    height: 100%; /* Match the container's height */
+    object-fit: cover; /* Fill the container while maintaining aspect ratio */
+    background-color: black; /* Fallback color if video doesn't load */
+    border-radius: 10px; /* Optional: For rounded corners */
+}
+
+.label {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #333;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 20;
+    border-radius: 50%;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.carousel {
+    display: flex;
+    gap: 10px;
+    overflow: hidden;
+    width: 80%;
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center;
+  }
+
+  .item {
+    flex: 1;
+    transition: all 0.5s ease;
+    cursor: pointer;
+  }
+
+  .item img {
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .item.active {
+    flex: 3;
+  }
+  .about1-section {
+    position: relative; /* For positioning "About Me" over "01" */
+    /* padding: 100px 20px; */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: flex-start; /* Align content to the left */
+    font-family:"Playfair Display", serif;
+}
+
+.overlay-text {
+    display: flex; /* Align the text elements horizontally */
+    align-items: center; /* Vertically center the text */
+    position: relative; /* Allows positioning of "About Me" over "01" */
+}
+
+.big-text {
+    font-size: 150px; /* Large "01" number */
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.05); /* Light gray for subtle effect */
+    z-index: 1; /* Behind "About Me" */
+    margin-right: 20px; /* Space between "01" and "About Me" */
+    position: relative;
+    right: -20px;
+}
+
+.about-me {
+    font-size: 36px; /* Size of "About Me" */
+    font-weight: bold;
+    color: #000; /* Black text */
+    position: relative; /* Overlay "About Me" on top of "01" */
+    /* top: 0; Align with the top of "01" */;
+    right: 152px;
+    z-index: 2; /* On top of "01" */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+
+    .big-text {
+        font-size: 100px; /* Reduce "01" size for smaller screens */
+        margin-right: 10px; /* Adjust space between "01" and "About Me" */
+    }
+
+    .about-me {
+        font-size: 28px; /* Reduce "About Me" size for smaller screens */
+     left: -77px;
+       
+    }
+}
+
+@media screen and (max-width: 480px) {
+   
+
+    .big-text {
+        font-size: 80px; /* Further reduce "01" size */
+        margin-right: 5px; /* Further reduce space */
+    }
+
+    .about-me {
+        font-size: 24px; /* Further reduce "About Me" size */
+    }
+}
+
+
+  .info{
+
+    font-family:sans-serif;
+    margin: 10px;
+    padding: 18px 25px 12px 25px
+  
+  }
+
+  /* General Styles for Grid Section */
+.grid-section {
+    padding: 50px 10%;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+  }
+  
+  .grid-item {
+    /* background-color: #fff; */
+    padding: 5px 70px;
+    margin: 20px;
+    /* border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .grid-heading {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #d35400; /* Highlight color */
+  }
+  
+  .grid-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .grid-list li {
+    margin-bottom: 15px;
+  }
+  
+  .grid-list strong {
+    font-size: 16px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .grid-list p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+  }
+  
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  #work {
+    /* padding: 80px 0; */
+    position: relative;
+    overflow: hidden; /* Prevents the scrollbar from showing */
+}
+
+.work {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevents any overflow from causing scrollbars */
+}
+/* 
+.work img {
+    width: 100%;
+    height: 100%;  /* Make image take full height */
+  
+    /* object-position: center; /* Keeps the image centered 
+    max-height: 600px; Maximum height for the image 
+}. */
+.work img {
+  width: 100%;
+  height: auto; /* Ensure aspect ratio is maintained */
+  object-fit: cover;
+}
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .work img {
+        max-height: 500px; /* Adjust max height for larger screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .work img {
+        max-height: 400px; /* Adjust max height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .work img {
+        max-height: 300px; /* Adjust max height for smaller devices */
+    }
+  }
+  /* Container Styling */
+.s-testimonials {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.s-testimonials__header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+ /* Swiper Layout */
+.swiper-container {
+  /* width: 100%; */
+  padding: 20px 0;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: calc(33.33% - 20px); /* Ensure 3 cards fit per row with some spacing */
+  margin-right: 10px;
+}
+
+.s-testimonials__avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.s-testimonials__content {
+  text-align: center;
+}
+
+.s-testimonials__cite strong {
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.s-testimonials__cite span {
+  font-size: 14px;
+  color: #777;
+}
+
+.s-testimonials__content p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .swiper-slide {
+    padding: 15px;
+    width: calc(50% - 10px); /* 2 cards per row on smaller screens */
+  }
+
+  .s-testimonials__avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .swiper-slide {
+    width: 100%; /* 1 card per row on mobile */
+  }
+
+  .s-testimonials__avatar {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+
+/* General Footer Styling */
+#footer {
+  background-color: #121212;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Footer Container Layout */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* About Section */
+.footer-about p {
+  line-height: 1.8;
+  color: #ccc;
+  max-width: 600px;
+}
+
+/* Social Links */
+.footer-social h5,
+.footer-contact h5 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer-social ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-social ul li {
+  margin-bottom: 10px;
+}
+
+.footer-social ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-social ul li a:hover {
+  color: #ffc107;
+}
+
+/* Contact Section */
+.footer-contact p {
+  margin: 5px 0;
+  color: #ccc;
+}
+
+/* Buttons Section */
+.footer-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.footer-buttons .btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.footer-buttons .btn-primary {
+  background-color: brown;
+  color: #fff;
+}
+
+.footer-buttons .btn-primary:hover {
+  background-color: brown;
+  transform: scale(1.05);
+}
+
+.footer-buttons .btn-outline {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+.footer-buttons .btn-outline:hover {
+  color: brown;
+  border-color: brown;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+  }
+
+  .footer-buttons {
+      flex-direction: column;
+      gap: 15px;
+  }
+}
+#get-in-touch {
+  background-color: black;
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.get-in-touch-content h1 {
+  position: relative;
+  display: inline-block;
+  font-size: 48px;
+  font-weight: bold;
+  margin: 0;
+  line-height: 1;
+}
+
+.get-in-touch-content .section-number {
+  font-size: 150px;
+  color: rgba(211, 211, 211, 0.349);
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  transform: translate(-50%, -20%);
+  font-weight: bold;
+  z-index: 1;
+}
+
+.get-in-touch-content .section-title {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+}
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column;
+      text-align: center;
+      width: 100%;
+  }
+
+  .get-in-touch-content h1 {
+      font-size: 36px;
+  }
+
+  .get-in-touch-content .section-number {
+      font-size: 72px;
+  }
+
+  .get-in-touch-content .section-title {
+      font-size: 36px;
+  }
+}
+
+   /* Slider Wrapper */
+   .testimonial-container {
+    position: relative;
+    /* width: 90%; */
+    max-width: 100%;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* Individual Slides */
+.testimonial-slide {
+    display: none;
+    animation: fadeIn 0.7s ease-in-out;
+}
+.testimonial-slide.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Profile Section */
+.profile-section img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #ddd;
+    margin-bottom: 10px;
+}
+.profile-section h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+.profile-section p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/* Testimonial Quote */
+.testimonial-quote {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Navigation Buttons */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #333;
+    color: #fff;
+    border: none;
+    font-size: 1.5rem;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.slider-button:hover {
+    background: #555;
+}
+.button-prev {
+    left: 15px;
+}
+.button-next {
+    right: 15px;
+}
+
+/* Indicator Dots */
+.slider-dots {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.slider-dot.active {
+    background-color: #333;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .profile-section img {
+        width: 70px;
+        height: 70px;
+    }
+    .testimonial-quote {
+        font-size: 1rem;
+    }
+}
