@@ -246,7 +246,7 @@ body {
 }
 
 /* Description styling */
-.reel-description {
+/* .reel-description {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -261,7 +261,7 @@ body {
 
 .reel-item:hover .reel-description {
   opacity: 1;
-}
+} */
 
 /* For smaller screens (tablet and mobile) */
 @media (max-width: 768px) {
@@ -276,7 +276,7 @@ body {
   }
 }
 
-
+/* 
 .gallery {
   display: flex;
   gap: 15px;
@@ -294,10 +294,10 @@ body {
 .gallery-image:hover {
   transform: scale(1.05);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
+} */
 
 /* Lightbox Modal */
-.lightbox {
+/* .lightbox {
   display: none;
   position: fixed;
   top: 0;
@@ -308,15 +308,15 @@ body {
   z-index: 1000;
   justify-content: center;
   align-items: center;
-}
+} */
 
-.lightbox-content {
+/* .lightbox-content {
   max-width: 90%;
   max-height: 80%;
   border-radius: 8px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
   animation: zoomIn 0.3s ease;
-}
+} */
 
 /* Animation */
 @keyframes zoomIn {

@@ -11,8 +11,13 @@ body {
   overflow-x: hidden; /* Prevents horizontal scrolling */
   line-height: 1.6; /* Ensures readable line height */
   width: 100%;
+  position: static;
 }
-
+@media (max-width: 570px) {
+  body {
+    width: fit-content;
+  }
+}
   main{
     width: 100%;
   }
@@ -312,14 +317,7 @@ body {
   
   /* For screens below 1081px */
     @media screen and (max-width: 1080px) {
-     /*.s-header__nav ul {
-      display: none;
-    }
-  
-    .burger {
-      display: flex;
-    }
-   
+
     /* When active, display the menu */
     .s-header__menu-links.active {
       display: block;
@@ -357,7 +355,8 @@ body {
     }
     .about-text{
         position: absolute;
-        left: 26%;
+       left: 22%;
+        width: 100%;
     }
   
     .btn,
@@ -390,49 +389,6 @@ body {
     transform: scale(1.05); /* Zoom in when hovered */
   }
  
-
-  
-  /* .slider-container {
-    position: relative;
-    width: 90%;
-    height: 500px; Adjust slider height
-    perspective: 1200px;
-    overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    position: absolute;
-    width: 300px;
-    height: 100%;
-    opacity: 0.5;
-    transform: scale(0.8) rotateY(-30deg);
-    transition: transform 0.5s ease-in-out, opacity 0.5s;
-}
-
-.slide.active {
-    opacity: 1;
-    transform: scale(1) rotateY(0);
-    z-index: 10;
-}
-
-.slide:nth-child(1) {
-    transform: translateX(-120%) rotateY(-20deg);
-}
-
-.slide:nth-child(3) {
-    transform: translateX(120%) rotateY(20deg);
-} */
-
 video {
     width: 100%; /* Ensure the video takes the full width of the slide */
     height: 100%; /* Match the container's height */
@@ -582,8 +538,7 @@ button.next {
     /* background-color: #fff; */
     padding: 5px 70px;
     margin: 20px;
-    /* border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+  
   }
   
   .grid-heading {
@@ -678,83 +633,6 @@ button.next {
   margin-bottom: 30px;
 }
 
- /* Swiper Layout
-.swiper-container {
-  width: 100%;
-  padding: 20px 0;
-}
-
-.swiper-wrapper {
-  display: flex;
-}
-
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: calc(33.33% - 20px); Ensure 3 cards fit per row with some spacing
-  margin-right: 10px;
-}
-
-.s-testimonials__avatar {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 15px;
-}
-
-.s-testimonials__content {
-  text-align: center;
-}
-
-.s-testimonials__cite strong {
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.s-testimonials__cite span {
-  font-size: 14px;
-  color: #777;
-}
-
-.s-testimonials__content p {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-}
-
-Responsive Design
-@media screen and (max-width: 768px) {
-  .swiper-slide {
-    padding: 15px;
-    width: calc(50% - 10px); 2 cards per row on smaller screens
-  }
-
-  .s-testimonials__avatar {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .swiper-slide {
-    width: 100%; 1 card per row on mobile
-  }
-
-  .s-testimonials__avatar {
-    width: 60px;
-    height: 60px;
-  }
-} */
-
- 
 
 /* General Footer Styling */
 #footer {
@@ -777,8 +655,9 @@ Responsive Design
 /* About Section */
 .footer-about p {
   line-height: 1.8;
+  padding-top: 5px;
   color: #ccc;
-  max-width: 600px;
+  max-width: 100%;
 }
 
 /* Social Links */
@@ -809,11 +688,14 @@ Responsive Design
 }
 
 /* Contact Section */
-.footer-contact p {
+.footer-contact a {
   margin: 5px 0;
   color: #ccc;
+  text-decoration: none;
 }
-
+.footer-contact a:hover{
+  color: #ffc107;
+}
 /* Buttons Section */
 .footer-buttons {
   display: flex;
@@ -1033,3 +915,31 @@ Responsive Design
         font-size: 1rem;
     }
 }
+
+/* General button styling */
+.read-more-btn {
+    background-color: brown; /* SaddleBrown background */
+    color: #F5F5DC; /* Beige text color */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* Remove borders */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Font size */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+    position: relative;
+    left: 36px;
+    top: 9px;
+}
+
+/* Hover effect */
+.read-more-btn:hover {
+    background-color: #8B4513; /* Darker brown */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Active effect */
+.read-more-btn:active {
+    background-color: #5C3317; /* Even darker brown */
+    transform: scale(0.98); /* Slightly shrink on click */
+}
+

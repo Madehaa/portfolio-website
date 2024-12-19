@@ -1,3 +1,17 @@
+
+function toggleReadMore() {
+    const paragraph = document.getElementById('infoParagraph');
+    const button = document.getElementById('toggleButton');
+    
+    if (paragraph.style.display === 'none') {
+        paragraph.style.display = 'block';
+        button.textContent = 'Read Less';
+    } else {
+        paragraph.style.display = 'none';
+        button.textContent = 'Read More';
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // Burger Menu Toggle
     const burger = document.getElementById('burger');
@@ -154,4 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize the Slider
     updateTestimonialSlider();
 
-});
+   
+
+ });
